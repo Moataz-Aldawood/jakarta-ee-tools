@@ -123,20 +123,39 @@ class JsfDefinitionProvider {
             }
         }
         const beanName = parts[0];
+        const beanLocation = await this.findBeanDefinition(beanName);
+        if (!beanLocation)
+            return null;
         // If clicking on the bean itself
         if (currentPartIndex === 0) {
-            return this.findBeanDefinition(beanName);
+            return beanLocation;
         }
-        else if (currentPartIndex >= 1) {
-            // Clicking on a property
-            let propertyName = parts[currentPartIndex];
+        let currentUri = beanLocation.uri;
+        let finalLocation = null;
+        for (let i = 1; i <= currentPartIndex; i++) {
+            let propertyName = parts[i];
             const isMethodCall = propertyName.endsWith('()');
             if (isMethodCall) {
                 propertyName = propertyName.substring(0, propertyName.length - 2);
             }
-            return this.findPropertyDefinition(beanName, propertyName, isMethodCall);
+            finalLocation = await this.findPropertyDefinitionInFile(currentUri, propertyName, isMethodCall);
+            // If this is the part the user clicked on, return its location!
+            if (i === currentPartIndex) {
+                return finalLocation || new vscode.Location(currentUri, new vscode.Position(0, 0)); // Fallback to class top if prop not found
+            }
+            // We are not at the end yet, must resolve the return type to continue
+            const content = await this.readFile(currentUri);
+            const typeName = this.findPropertyTypeInContent(content, propertyName);
+            if (!typeName) {
+                return null; // Cannot resolve deeper
+            }
+            const nextClassUri = await this.findJavaClass(typeName);
+            if (!nextClassUri) {
+                return null; // Cannot find the class file for the type
+            }
+            currentUri = nextClassUri;
         }
-        return null;
+        return finalLocation;
     }
     async findBeanDefinition(beanName) {
         const javaFiles = await vscode.workspace.findFiles('**/*.java', '**/node_modules/**');
@@ -163,34 +182,64 @@ class JsfDefinitionProvider {
         }
         return null;
     }
-    async findPropertyDefinition(beanName, propertyName, isMethodCall = false) {
-        const beanLocation = await this.findBeanDefinition(beanName);
-        if (!beanLocation) {
-            return null;
-        }
-        const content = await this.readFile(beanLocation.uri);
+    async findPropertyDefinitionInFile(uri, propertyName, isMethodCall = false) {
+        const content = await this.readFile(uri);
         // 1. Look for getter: public String getPropertyName()
         const capitalizedProp = propertyName.charAt(0).toUpperCase() + propertyName.slice(1);
         const getterRegex = new RegExp(`public\\s+(?:[\\w<>\\[\\]\\?,\\s]+\\s+)?(get|is)${capitalizedProp}\\s*\\(`);
-        const getterLoc = this.createLocation(beanLocation.uri, content, getterRegex);
+        const getterLoc = this.createLocation(uri, content, getterRegex);
         if (getterLoc) {
             return getterLoc;
         }
         // 2. Look for method: public void propertyName()
         const methodRegex = new RegExp(`public\\s+(?:[\\w<>\\[\\]\\?,\\s]+\\s+)?${propertyName}\\s*\\(`);
-        const methodLoc = this.createLocation(beanLocation.uri, content, methodRegex);
+        const methodLoc = this.createLocation(uri, content, methodRegex);
         if (methodLoc) {
             return methodLoc;
         }
         // 3. Look for field: private String propertyName;
-        // Fields might be private, protected, or package-private
         const fieldRegex = new RegExp(`(?:private|protected|public)?\\s+(?:[\\w<>\\[\\]\\?,\\s]+\\s+)?${propertyName}\\s*[;=]`);
-        const fieldLoc = this.createLocation(beanLocation.uri, content, fieldRegex);
+        const fieldLoc = this.createLocation(uri, content, fieldRegex);
         if (fieldLoc) {
             return fieldLoc;
         }
-        // If not found, just return the bean location as fallback
-        return beanLocation;
+        return null;
+    }
+    extractBaseType(rawType) {
+        // Strip List<Type> -> Type
+        const genericMatch = /<([^>]+)>/.exec(rawType);
+        if (genericMatch) {
+            const innerType = genericMatch[1];
+            // If Map<String, User>, take the last one (value type)
+            const parts = innerType.split(',');
+            return parts[parts.length - 1].trim();
+        }
+        // Strip arrays User[] -> User
+        return rawType.replace(/\[\]/g, '').trim();
+    }
+    findPropertyTypeInContent(content, propertyName) {
+        const capitalizedProp = propertyName.charAt(0).toUpperCase() + propertyName.slice(1);
+        // Check getter
+        const getterRegex = new RegExp(`(?:public|protected|private)?\\s+([\\w<>\\[\\]\\?,]+)\\s+(?:get|is)${capitalizedProp}\\s*\\(`);
+        let match = getterRegex.exec(content);
+        if (match) {
+            return this.extractBaseType(match[1]);
+        }
+        // Check field
+        const fieldRegex = new RegExp(`(?:private|protected|public)?\\s+([\\w<>\\[\\]\\?,]+)\\s+${propertyName}\\s*[;=]`);
+        match = fieldRegex.exec(content);
+        if (match) {
+            return this.extractBaseType(match[1]);
+        }
+        return null;
+    }
+    async findJavaClass(className) {
+        const searchPattern = `**/${className}.java`;
+        const files = await vscode.workspace.findFiles(searchPattern, '**/node_modules/**');
+        if (files.length > 0) {
+            return files[0];
+        }
+        return null;
     }
     async readFile(uri) {
         // Read file content without opening it in the editor if it's large, but openTextDocument is easier

@@ -1,15 +1,28 @@
 {
   "name": "jakarta-ee-tools",
   "author": "Moataz Aldawood and his friend Google Gemini ;)",
-  "publisher": "moata",
+  "publisher": "moataz-aldawood",
   "displayName": "Jakarta EE Tools",
-  "description": "Language features for Jakarta EE (JSF) development.",
-  "version": "0.0.1",
+  "description": "Advanced Jakarta EE (JSF) tools: deep nested Java EL resolution, custom composite component intelligence, real-time diagnostics, and hover documentation. GitHub: https://github.com/Moataz-Aldawood/jakarta-ee-tools",
+  "version": "1.1.0",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Moataz-Aldawood/jakarta-ee-tools"
+  },
   "engines": {
     "vscode": "^1.80.0"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages",
+    "Other"
+  ],
+  "keywords": [
+    "Jakarta EE",
+    "JSF",
+    "Java",
+    "Java EE",
+    "Coding Utilities"
   ],
   "activationEvents": [
     "onLanguage:jsf",
