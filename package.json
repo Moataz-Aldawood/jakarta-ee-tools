@@ -1,0 +1,30 @@
+{
+  "name": "jakarta-ee-tools",
+  "author": "Moataz Aldawood and his friend Google Gemini ;)",
+  "publisher": "moata",
+  "displayName": "Jakarta EE Tools",
+  "description": "Language features for Jakarta EE (JSF) development.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:jsf",
+    "onLanguage:html",
+    "onLanguage:xml"
+  ],
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "18.x",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.1.3"
+  }
+}
