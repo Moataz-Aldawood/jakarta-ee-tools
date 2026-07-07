@@ -37,8 +37,9 @@ Catch JSF mistakes before you ever run the application.
 - Does not require a Java Language Server to be running, but synergizes excellently with standard Java extensions.
 
 ## Future Enhancements
-- Component file caching for extreme performance on huge enterprise workspaces.
-- 3rd-Party Tag library support (e.g., PrimeFaces).
+- **Component File Caching**: Instant jump-to-definition and extreme performance optimizations for huge enterprise workspaces via Java file caching.
+- **EL Semantic Validation**: Real-time diagnostics for mistyped Java beans and properties within EL expressions (e.g., flagging `#{userLoggin.user}`).
+- **3rd-Party Tag library support**: Rich integration for libraries like PrimeFaces.
 
 ## License
 This project is licensed under the GPL-3.0 License.
