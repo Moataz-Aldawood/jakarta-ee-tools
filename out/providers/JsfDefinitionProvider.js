@@ -149,7 +149,7 @@ class JsfDefinitionProvider {
             if (!typeName) {
                 return null; // Cannot resolve deeper
             }
-            const nextClassUri = await this.findJavaClass(typeName);
+            const nextClassUri = await this.findJavaClass(typeName, content);
             if (!nextClassUri) {
                 return null; // Cannot find the class file for the type
             }
@@ -233,7 +233,33 @@ class JsfDefinitionProvider {
         }
         return null;
     }
-    async findJavaClass(className) {
+    async findJavaClass(className, contextContent) {
+        // If we have the content of the file that referenced this class, try to find its exact package
+        if (contextContent) {
+            // 1. Look for an explicit import (e.g. import com.example.User;)
+            const importRegex = new RegExp(`import\\s+([a-zA-Z0-9_\\.]+)\\.${className}\\s*;`);
+            const importMatch = importRegex.exec(contextContent);
+            if (importMatch && importMatch[1]) {
+                const packagePath = importMatch[1].replace(/\./g, '/');
+                const searchPattern = `**/${packagePath}/${className}.java`;
+                const files = await vscode.workspace.findFiles(searchPattern, '**/node_modules/**');
+                if (files.length > 0) {
+                    return files[0];
+                }
+            }
+            // 2. Look if it's in the same package (e.g. package com.example;)
+            const packageRegex = /package\s+([a-zA-Z0-9_\.]+)\s*;/;
+            const packageMatch = packageRegex.exec(contextContent);
+            if (packageMatch && packageMatch[1]) {
+                const packagePath = packageMatch[1].replace(/\./g, '/');
+                const searchPattern = `**/${packagePath}/${className}.java`;
+                const files = await vscode.workspace.findFiles(searchPattern, '**/node_modules/**');
+                if (files.length > 0) {
+                    return files[0];
+                }
+            }
+        }
+        // 3. Fallback: Search globally for the class name
         const searchPattern = `**/${className}.java`;
         const files = await vscode.workspace.findFiles(searchPattern, '**/node_modules/**');
         if (files.length > 0) {

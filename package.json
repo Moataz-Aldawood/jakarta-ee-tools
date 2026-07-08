@@ -4,7 +4,7 @@
   "publisher": "moataz-aldawood",
   "displayName": "Jakarta EE Tools",
   "description": "Advanced Jakarta EE (JSF) tools: deep nested Java EL resolution, custom composite component intelligence, real-time diagnostics, and hover documentation. GitHub: https://github.com/Moataz-Aldawood/jakarta-ee-tools",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
