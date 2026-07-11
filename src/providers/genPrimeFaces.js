@@ -2,6 +2,37 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
+function cleanHtml(html, firstParagraphOnly = false) {
+    if (!html) return '';
+    let text = html
+        .replace(/<!\[CDATA\[/gi, '')
+        .replace(/\]\]>/gi, '')
+        .replace(/&lt;p&gt;|&lt;br\s*\/?&gt;|<p>|<br\s*\/?>/gi, '\n\n')
+        .replace(/&lt;\/p&gt;|<\/p>/gi, '')
+        .replace(/&lt;ul&gt;|&lt;\/ul&gt;|&lt;ol&gt;|&lt;\/ol&gt;|<ul>|<\/ul>|<ol>|<\/ol>/gi, '\n\n')
+        .replace(/&lt;li&gt;|<li>/gi, '\n- ')
+        .replace(/&lt;\/li&gt;|<\/li>/gi, '')
+        .replace(/&lt;strong&gt;|&lt;\/strong&gt;|&lt;b&gt;|&lt;\/b&gt;|<strong>|<\/strong>|<b>|<\/b>/gi, '**')
+        .replace(/&lt;code&gt;|&lt;pre&gt;|<code>|<pre>/gi, '`')
+        .replace(/&lt;\/code&gt;|&lt;\/pre&gt;|<\/code>|<\/pre>/gi, '`')
+        .replace(/&lt;/gi, '<')
+        .replace(/&gt;/gi, '>')
+        .replace(/&amp;/gi, '&')
+        .replace(/&quot;/gi, '"')
+        .replace(/<\/?(div|span|a|h[1-6]|table|tr|td|th|tbody|thead|dl|dt|dd)[^>]*>/gi, '')
+        .replace(/[ \t]+/g, ' ')
+        .replace(/ \n/g, '\n')
+        .replace(/\n \n/g, '\n\n')
+        .replace(/\n\n+/g, '\n\n')
+        .trim();
+        
+    if (firstParagraphOnly) {
+        text = text.split('\n\n')[0].replace(/\n/g, ' ').trim();
+    }
+    
+    return text;
+}
+
 const url = 'https://repo1.maven.org/maven2/org/primefaces/primefaces/15.0.17/primefaces-15.0.17.jar';
 const zipName = 'primefaces.zip';
 const extractDir = 'primefaces_extracted';
@@ -49,9 +80,7 @@ while ((tagMatch = tagRegex.exec(xmlContent)) !== null) {
     const tagName = nameM[1].trim();
     
     let descM = descRegex.exec(tagContent) || fallbackDescRegex.exec(tagContent);
-    let desc = descM ? descM[1].trim() : `PrimeFaces tag p:${tagName}`;
-    // clean html tags from desc if any
-    desc = desc.replace(/<[^>]*>?/gm, '');
+    let desc = descM ? cleanHtml(descM[1]) : `PrimeFaces tag p:${tagName}`;
 
     const attributes = [];
     let attrMatch;
@@ -61,7 +90,7 @@ while ((tagMatch = tagRegex.exec(xmlContent)) !== null) {
         if (!aNameM) continue;
         
         let aDescM = descRegex.exec(attrContent) || fallbackDescRegex.exec(attrContent);
-        let aDesc = aDescM ? aDescM[1].trim().replace(/<[^>]*>?/gm, '') : '';
+        let aDesc = aDescM ? cleanHtml(aDescM[1]) : '';
         
         const aTypeM = attrTypeRegex.exec(attrContent);
         const aType = aTypeM ? aTypeM[1].trim() : 'String';
