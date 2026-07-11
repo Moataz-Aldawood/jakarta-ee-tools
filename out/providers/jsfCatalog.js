@@ -18,6 +18,78 @@ exports.JSF_CATALOG = {
             {
                 "name": "binding",
                 "description": "The ValueExpression linking this component to a property in a backing bean"
+            },
+            {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
             }
         ]
     },
@@ -37,6 +109,78 @@ exports.JSF_CATALOG = {
             {
                 "name": "binding",
                 "description": "The ValueExpression linking this component to a property in a backing bean"
+            },
+            {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
             },
             {
                 "name": "style",
@@ -66,6 +210,78 @@ exports.JSF_CATALOG = {
                 "description": "The ValueExpression linking this component to a property in a backing bean"
             },
             {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
+            },
+            {
                 "name": "style",
                 "description": "CSS style(s) to be applied"
             },
@@ -91,6 +307,78 @@ exports.JSF_CATALOG = {
             {
                 "name": "binding",
                 "description": "The ValueExpression linking this component to a property in a backing bean"
+            },
+            {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
             },
             {
                 "name": "style",
@@ -137,6 +425,78 @@ exports.JSF_CATALOG = {
                 "description": "The ValueExpression linking this component to a property in a backing bean"
             },
             {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
+            },
+            {
                 "name": "style",
                 "description": "CSS style(s) to be applied"
             },
@@ -179,6 +539,78 @@ exports.JSF_CATALOG = {
             {
                 "name": "binding",
                 "description": "The ValueExpression linking this component to a property in a backing bean"
+            },
+            {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
             },
             {
                 "name": "style",
@@ -225,6 +657,78 @@ exports.JSF_CATALOG = {
                 "description": "The ValueExpression linking this component to a property in a backing bean"
             },
             {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
+            },
+            {
                 "name": "style",
                 "description": "CSS style(s) to be applied"
             },
@@ -252,12 +756,101 @@ exports.JSF_CATALOG = {
                 "description": "The ValueExpression linking this component to a property in a backing bean"
             },
             {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
+            },
+            {
                 "name": "style",
                 "description": "CSS style(s) to be applied"
             },
             {
                 "name": "styleClass",
                 "description": "Space-separated list of CSS style class(es)"
+            },
+            {
+                "name": "enctype",
+                "description": "Content type used to submit the form"
+            },
+            {
+                "name": "prependId",
+                "description": "Flag indicating whether or not this form should prepend its id to its descendent id",
+                "type": "boolean"
+            },
+            {
+                "name": "accept",
+                "description": "List of content types that a server processing this form will handle correctly"
+            },
+            {
+                "name": "acceptcharset",
+                "description": "List of character encodings for input data that are accepted by the server processing this form"
             }
         ]
     },
@@ -277,6 +870,78 @@ exports.JSF_CATALOG = {
             {
                 "name": "binding",
                 "description": "The ValueExpression linking this component to a property in a backing bean"
+            },
+            {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
             },
             {
                 "name": "style",
@@ -304,6 +969,78 @@ exports.JSF_CATALOG = {
             {
                 "name": "binding",
                 "description": "The ValueExpression linking this component to a property in a backing bean"
+            },
+            {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
             }
         ]
     },
@@ -323,6 +1060,78 @@ exports.JSF_CATALOG = {
             {
                 "name": "binding",
                 "description": "The ValueExpression linking this component to a property in a backing bean"
+            },
+            {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
             },
             {
                 "name": "style",
@@ -369,6 +1178,78 @@ exports.JSF_CATALOG = {
                 "description": "The ValueExpression linking this component to a property in a backing bean"
             },
             {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
+            },
+            {
                 "name": "style",
                 "description": "CSS style(s) to be applied"
             },
@@ -411,6 +1292,78 @@ exports.JSF_CATALOG = {
             {
                 "name": "binding",
                 "description": "The ValueExpression linking this component to a property in a backing bean"
+            },
+            {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
             },
             {
                 "name": "style",
@@ -457,6 +1410,78 @@ exports.JSF_CATALOG = {
                 "description": "The ValueExpression linking this component to a property in a backing bean"
             },
             {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
+            },
+            {
                 "name": "style",
                 "description": "CSS style(s) to be applied"
             },
@@ -501,6 +1526,78 @@ exports.JSF_CATALOG = {
                 "description": "The ValueExpression linking this component to a property in a backing bean"
             },
             {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
+            },
+            {
                 "name": "style",
                 "description": "CSS style(s) to be applied"
             },
@@ -526,6 +1623,78 @@ exports.JSF_CATALOG = {
             {
                 "name": "binding",
                 "description": "The ValueExpression linking this component to a property in a backing bean"
+            },
+            {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
             }
         ]
     },
@@ -545,6 +1714,78 @@ exports.JSF_CATALOG = {
             {
                 "name": "binding",
                 "description": "The ValueExpression linking this component to a property in a backing bean"
+            },
+            {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
             }
         ]
     },
@@ -564,6 +1805,78 @@ exports.JSF_CATALOG = {
             {
                 "name": "binding",
                 "description": "The ValueExpression linking this component to a property in a backing bean"
+            },
+            {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
             },
             {
                 "name": "style",
@@ -597,6 +1910,78 @@ exports.JSF_CATALOG = {
                 "description": "The ValueExpression linking this component to a property in a backing bean"
             },
             {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
+            },
+            {
                 "name": "style",
                 "description": "CSS style(s) to be applied"
             },
@@ -626,6 +2011,78 @@ exports.JSF_CATALOG = {
             {
                 "name": "binding",
                 "description": "The ValueExpression linking this component to a property in a backing bean"
+            },
+            {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
             },
             {
                 "name": "style",
@@ -659,6 +2116,78 @@ exports.JSF_CATALOG = {
                 "description": "The ValueExpression linking this component to a property in a backing bean"
             },
             {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
+            },
+            {
                 "name": "style",
                 "description": "CSS style(s) to be applied"
             },
@@ -688,6 +2217,78 @@ exports.JSF_CATALOG = {
             {
                 "name": "binding",
                 "description": "The ValueExpression linking this component to a property in a backing bean"
+            },
+            {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
             },
             {
                 "name": "style",
@@ -721,6 +2322,78 @@ exports.JSF_CATALOG = {
                 "description": "The ValueExpression linking this component to a property in a backing bean"
             },
             {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
+            },
+            {
                 "name": "style",
                 "description": "CSS style(s) to be applied"
             },
@@ -752,6 +2425,78 @@ exports.JSF_CATALOG = {
                 "description": "The ValueExpression linking this component to a property in a backing bean"
             },
             {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
+            },
+            {
                 "name": "style",
                 "description": "CSS style(s) to be applied"
             },
@@ -779,6 +2524,78 @@ exports.JSF_CATALOG = {
                 "description": "The ValueExpression linking this component to a property in a backing bean"
             },
             {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
+            },
+            {
                 "name": "style",
                 "description": "CSS style(s) to be applied"
             },
@@ -804,6 +2621,78 @@ exports.JSF_CATALOG = {
             {
                 "name": "binding",
                 "description": "The ValueExpression linking this component to a property in a backing bean"
+            },
+            {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
             },
             {
                 "name": "style",
@@ -850,6 +2739,78 @@ exports.JSF_CATALOG = {
                 "description": "The ValueExpression linking this component to a property in a backing bean"
             },
             {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
+            },
+            {
                 "name": "style",
                 "description": "CSS style(s) to be applied"
             },
@@ -892,6 +2853,78 @@ exports.JSF_CATALOG = {
             {
                 "name": "binding",
                 "description": "The ValueExpression linking this component to a property in a backing bean"
+            },
+            {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
             },
             {
                 "name": "style",
@@ -938,6 +2971,78 @@ exports.JSF_CATALOG = {
                 "description": "The ValueExpression linking this component to a property in a backing bean"
             },
             {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
+            },
+            {
                 "name": "style",
                 "description": "CSS style(s) to be applied"
             },
@@ -980,6 +3085,78 @@ exports.JSF_CATALOG = {
             {
                 "name": "binding",
                 "description": "The ValueExpression linking this component to a property in a backing bean"
+            },
+            {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
             },
             {
                 "name": "style",
@@ -1026,6 +3203,78 @@ exports.JSF_CATALOG = {
                 "description": "The ValueExpression linking this component to a property in a backing bean"
             },
             {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
+            },
+            {
                 "name": "style",
                 "description": "CSS style(s) to be applied"
             },
@@ -1068,6 +3317,78 @@ exports.JSF_CATALOG = {
             {
                 "name": "binding",
                 "description": "The ValueExpression linking this component to a property in a backing bean"
+            },
+            {
+                "name": "title",
+                "description": "Advisory title information"
+            },
+            {
+                "name": "lang",
+                "description": "Code describing the language used"
+            },
+            {
+                "name": "dir",
+                "description": "Direction for weak/neutral text"
+            },
+            {
+                "name": "tabindex",
+                "description": "Position in the tabbing order"
+            },
+            {
+                "name": "role",
+                "description": "Per the WAI-ARIA spec, the role of this element"
+            },
+            {
+                "name": "onclick",
+                "description": "Javascript code executed when a pointer button is clicked"
+            },
+            {
+                "name": "ondblclick",
+                "description": "Javascript code executed when a pointer button is double clicked"
+            },
+            {
+                "name": "onkeydown",
+                "description": "Javascript code executed when a key is pressed down"
+            },
+            {
+                "name": "onkeypress",
+                "description": "Javascript code executed when a key is pressed and released"
+            },
+            {
+                "name": "onkeyup",
+                "description": "Javascript code executed when a key is released"
+            },
+            {
+                "name": "onmousedown",
+                "description": "Javascript code executed when a pointer button is pressed down"
+            },
+            {
+                "name": "onmousemove",
+                "description": "Javascript code executed when a pointer is moved"
+            },
+            {
+                "name": "onmouseout",
+                "description": "Javascript code executed when a pointer is moved away"
+            },
+            {
+                "name": "onmouseover",
+                "description": "Javascript code executed when a pointer is moved onto"
+            },
+            {
+                "name": "onmouseup",
+                "description": "Javascript code executed when a pointer button is released"
+            },
+            {
+                "name": "onblur",
+                "description": "Javascript code executed when this element loses focus"
+            },
+            {
+                "name": "onfocus",
+                "description": "Javascript code executed when this element receives focus"
+            },
+            {
+                "name": "onchange",
+                "description": "Javascript code executed when this element loses focus and its value has been modified"
             },
             {
                 "name": "style",

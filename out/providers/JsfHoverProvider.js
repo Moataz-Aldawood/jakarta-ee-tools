@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.JsfHoverProvider = void 0;
 const vscode = require("vscode");
 const jsfCatalog_1 = require("./jsfCatalog");
+const ThirdPartyCatalogs_1 = require("./ThirdPartyCatalogs");
 class JsfHoverProvider {
     provideHover(document, position, token) {
         const wordRange = document.getWordRangeAtPosition(position, /[a-zA-Z0-9_:-]+/);
@@ -11,17 +12,33 @@ class JsfHoverProvider {
         }
         const word = document.getText(wordRange);
         // Check if the hovered word is a JSF tag
-        const tag = jsfCatalog_1.JSF_CATALOG[word];
+        const docText = document.getText();
+        const activeCatalogs = { ...jsfCatalog_1.JSF_CATALOG, ...(0, ThirdPartyCatalogs_1.getActiveThirdPartyCatalogs)(docText) };
+        const tag = activeCatalogs[word];
         if (tag) {
             const parts = word.split(':');
             const prefix = parts.length > 1 ? parts[0] : '';
             const tagName = parts.length > 1 ? parts[1] : word;
-            const docUrl = `https://jakarta.ee/specifications/faces/4.1/vdldoc/${prefix}/${tagName}.html`;
+            let library = 'JSF Standard Tag Library';
             const markdown = new vscode.MarkdownString();
             markdown.appendMarkdown(`**${tag.name}**\n\n`);
             markdown.appendMarkdown(`${tag.description}\n\n`);
-            markdown.appendMarkdown(`[Read full documentation](${docUrl})\n\n`);
-            markdown.appendMarkdown(`*JSF Standard Tag Library*`);
+            if (prefix === 'p') {
+                const docUrl = `https://primefaces.github.io/primefaces/15_0_0/#/components/${tagName.toLowerCase()}`;
+                library = 'PrimeFaces Tag Library';
+                markdown.appendMarkdown(`[Read full documentation](${docUrl})\n\n`);
+            }
+            else if (prefix === 'o') {
+                const showcaseUrl = `https://showcase.omnifaces.org/components/${tagName}`;
+                const vdlUrl = `https://omnifaces.org/docs/vdldoc/5.3/o/${tagName}.html`;
+                library = 'OmniFaces Tag Library';
+                markdown.appendMarkdown(`[View Showcase Demo](${showcaseUrl}) | [Read VDL Documentation](${vdlUrl})\n\n`);
+            }
+            else {
+                const docUrl = `https://jakarta.ee/specifications/faces/4.1/vdldoc/${prefix}/${tagName}.html`;
+                markdown.appendMarkdown(`[Read full documentation](${docUrl})\n\n`);
+            }
+            markdown.appendMarkdown(`*${library}*`);
             return new vscode.Hover(markdown, wordRange);
         }
         // We could also check if hovering over an attribute of a known tag

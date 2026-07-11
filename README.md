@@ -38,8 +38,14 @@ Catch JSF mistakes before you ever run the application.
 
 ## Future Enhancements
 - **Component File Caching**: Instant jump-to-definition and extreme performance optimizations for huge enterprise workspaces via Java file caching.
+- **EL Auto-Complete (IntelliSense)**: Deep auto-complete for Java Managed Beans, properties, and methods when typing inside `#{...}` blocks.
 - **EL Semantic Validation**: Real-time diagnostics for mistyped Java beans and properties within EL expressions (e.g., flagging `#{userLoggin.user}`).
 - **3rd-Party Tag library support**: Rich integration for libraries like PrimeFaces.
+- **EL Expression Highlighting**: Add syntax highlighting specific to JSF Expression Language `#{...}` blocks.
+- **Expanded Hover Documentation**: Show full documentation in the hover popup rather than just the concise summary.
+- **Attribute Hover Documentation**: Show rich hover documentation popups for specific JSF standard tag attributes.
+- **Component Linking**: Colorize `for="..."` attribute values and link them directly to the corresponding `id="..."` values.
+- **`ui:repeat` iteration variable support**: Deep resolution testing and support for iteration variables like `#{item.name}` inside data tables and repeats.
 
 ## License
 This project is licensed under the GPL-3.0 License.

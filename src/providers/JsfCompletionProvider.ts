@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import { JSF_CATALOG } from './jsfCatalog';
 import { getCompositeNamespaces, resolveCompositeComponent, getCompositeAttributes } from './namespaceParser';
+import { getActiveThirdPartyCatalogs } from './ThirdPartyCatalogs';
 
 export class JsfCompletionProvider implements vscode.CompletionItemProvider {
     public async provideCompletionItems(
@@ -21,16 +22,35 @@ export class JsfCompletionProvider implements vscode.CompletionItemProvider {
         if (tagMatch) {
             const items: vscode.CompletionItem[] = [];
             
-            // 1. Standard tags from catalog
-            for (const tagName in JSF_CATALOG) {
-                const tag = JSF_CATALOG[tagName];
+            const activeCatalogs = { ...JSF_CATALOG, ...getActiveThirdPartyCatalogs(docText) };
+            
+            const typedPrefix = tagMatch[1];
+            
+            // 1. Standard and 3rd-party tags from catalogs
+            for (const tagName in activeCatalogs) {
+                if (typedPrefix && !tagName.startsWith(typedPrefix)) continue;
+                const tag = activeCatalogs[tagName];
                 const item = new vscode.CompletionItem(tagName, vscode.CompletionItemKind.Class);
+                
+                if (typedPrefix) {
+                    item.range = new vscode.Range(
+                        position.with(undefined, position.character - typedPrefix.length),
+                        position
+                    );
+                }
+                
                 item.detail = 'JSF Tag';
                 
                 const parts = tagName.split(':');
                 const prefix = parts.length > 1 ? parts[0] : '';
                 const baseName = parts.length > 1 ? parts[1] : tagName;
-                const docUrl = `https://jakarta.ee/specifications/faces/4.1/vdldoc/${prefix}/${baseName}.html`;
+                
+                let docUrl = '';
+                if (prefix === 'p') {
+                    docUrl = `https://primefaces.github.io/primefaces/15_0_0/#/components/${baseName.toLowerCase()}`;
+                } else {
+                    docUrl = `https://jakarta.ee/specifications/faces/4.1/vdldoc/${prefix}/${baseName}.html`;
+                }
 
                 const markdown = new vscode.MarkdownString();
                 markdown.appendMarkdown(`${tag.description}\n\n`);
@@ -51,7 +71,14 @@ export class JsfCompletionProvider implements vscode.CompletionItemProvider {
                     const baseName = file.path.split('/').pop()?.replace('.xhtml', '');
                     if (baseName) {
                         const tagName = `${prefix}:${baseName}`;
+                        if (typedPrefix && !tagName.startsWith(typedPrefix)) continue;
                         const item = new vscode.CompletionItem(tagName, vscode.CompletionItemKind.Class);
+                        if (typedPrefix) {
+                            item.range = new vscode.Range(
+                                position.with(undefined, position.character - typedPrefix.length),
+                                position
+                            );
+                        }
                         item.detail = `Custom Composite Component (${folder})`;
                         item.documentation = new vscode.MarkdownString(`Custom JSF component loaded from resources/${folder}/${baseName}.xhtml`);
                         items.push(item);
@@ -69,7 +96,8 @@ export class JsfCompletionProvider implements vscode.CompletionItemProvider {
             const tagName = insideTagMatch[1];
             
             // 1. Standard Tag Attributes
-            const tag = JSF_CATALOG[tagName];
+            const activeCatalogs = { ...JSF_CATALOG, ...getActiveThirdPartyCatalogs(docText) };
+            const tag = activeCatalogs[tagName];
             if (tag) {
                 const items: vscode.CompletionItem[] = [];
                 for (const attr of tag.attributes) {
