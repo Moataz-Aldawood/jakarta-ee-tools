@@ -34,6 +34,7 @@ export function refreshDiagnostics(document: vscode.TextDocument, jsfDiagnostics
                 "Unclosed Expression Language (EL) block. Missing '}'", 
                 vscode.DiagnosticSeverity.Error
             );
+            diagnostic.source = 'Jakarta Faces Tools';
             diagnostics.push(diagnostic);
             
             // Move index forward to avoid infinite loop
@@ -74,6 +75,7 @@ export function refreshDiagnostics(document: vscode.TextDocument, jsfDiagnostics
                     `Unknown JSF tag '${fullTagName}'.`, 
                     vscode.DiagnosticSeverity.Warning
                 );
+                diagnostic.source = 'Jakarta Faces Tools';
                 diagnostics.push(diagnostic);
             }
         }
@@ -124,6 +126,7 @@ export function refreshDiagnostics(document: vscode.TextDocument, jsfDiagnostics
                         `Unknown attribute '${attrName}' for tag '${fullTagName}'.`, 
                         vscode.DiagnosticSeverity.Warning
                     );
+                    diagnostic.source = 'Jakarta Faces Tools';
                     diagnostics.push(diagnostic);
                 }
             }

@@ -1,10 +1,10 @@
-# Jakarta Face Tools
+# Jakarta Faces Tools
 
 **Authors:** Moataz Aldawood and his friend Google Gemini ;)
 
-Advanced VS Code extension for Jakarta Face (JSF) development, featuring intelligent Java EL resolution, deep composite component analysis, and comprehensive 3rd-party tag library support.
+Advanced VS Code extension for Jakarta Faces (JSF) development, featuring intelligent Java EL resolution, deep composite component analysis, and comprehensive 3rd-party tag library support.
 
-**GitHub Repository:** [https://github.com/Moataz-Aldawood/jakarta-face-tools](https://github.com/Moataz-Aldawood/jakarta-face-tools)
+**GitHub Repository:** [https://github.com/Moataz-Aldawood/jakarta-faces-tools](https://github.com/Moataz-Aldawood/jakarta-faces-tools)
 
 A powerful Visual Studio Code extension designed to supercharge your Jakarta EE (JSF) development experience. This extension provides deep language features for JSF `.xhtml` and `.jsf` files, bringing IDE-level intelligence to VS Code.
 

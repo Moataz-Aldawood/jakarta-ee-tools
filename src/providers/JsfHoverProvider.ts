@@ -50,11 +50,42 @@ export class JsfHoverProvider implements vscode.HoverProvider {
             }
 
             markdown.appendMarkdown(`*${library}*`);
+            markdown.appendMarkdown(`\n\n---\n*⚡ Jakarta Faces Tools*`);
             return new vscode.Hover(markdown, wordRange);
         }
 
-        // We could also check if hovering over an attribute of a known tag
-        // by parsing the line backwards to find the tag name, but tag hover is the main requirement.
+        // Check if the hovered word is a JSF tag attribute
+        // Parse backwards to find the nearest enclosing tag
+        const textBeforePosition = document.getText(new vscode.Range(new vscode.Position(0, 0), position));
+        const lastOpenBracketIdx = textBeforePosition.lastIndexOf('<');
+        if (lastOpenBracketIdx !== -1) {
+            const lastCloseBracketIdx = textBeforePosition.lastIndexOf('>');
+            if (lastOpenBracketIdx > lastCloseBracketIdx) {
+                // We are inside a tag
+                const tagText = textBeforePosition.substring(lastOpenBracketIdx);
+                const match = tagText.match(/<([a-zA-Z0-9_:-]+)/);
+                if (match) {
+                    const tagName = match[1];
+                    const tagDef = activeCatalogs[tagName];
+                    if (tagDef && tagDef.attributes) {
+                        const attr = tagDef.attributes.find(a => a.name === word);
+                        if (attr) {
+                            const markdown = new vscode.MarkdownString();
+                            markdown.appendMarkdown(`**${tagName}** \`@${attr.name}\`\n\n`);
+                            markdown.appendMarkdown(`${attr.description || 'No description available.'}\n\n`);
+                            if (attr.type) {
+                                markdown.appendMarkdown(`*Type:* \`${attr.type}\`\n\n`);
+                            }
+                            if (attr.required) {
+                                markdown.appendMarkdown(`*Required:* \`${attr.required}\`\n\n`);
+                            }
+                            markdown.appendMarkdown(`\n\n---\n*⚡ Jakarta Faces Tools*`);
+                            return new vscode.Hover(markdown, wordRange);
+                        }
+                    }
+                }
+            }
+        }
         
         return null;
     }

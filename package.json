@@ -4,7 +4,7 @@
   "publisher": "moataz-aldawood",
   "displayName": "Jakarta Faces Tools",
   "description": "Advanced Jakarta Faces (JSF) tools: deep nested Java EL resolution, custom composite component intelligence, real-time diagnostics, and hover documentation. GitHub: https://github.com/Moataz-Aldawood/jakarta-faces-tools",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "icon": "logo.jpg",
   "license": "GPL-3.0",
   "repository": {
