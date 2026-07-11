@@ -1,15 +1,15 @@
 {
-  "name": "jakarta-face-tools",
+  "name": "jakarta-faces-tools",
   "author": "Moataz Aldawood and his friend Google Gemini ;)",
   "publisher": "moataz-aldawood",
-  "displayName": "Jakarta Face Tools",
-  "description": "Advanced Jakarta Face (JSF) tools: deep nested Java EL resolution, custom composite component intelligence, real-time diagnostics, and hover documentation. GitHub: https://github.com/Moataz-Aldawood/jakarta-face-tools",
-  "version": "1.5.0",
+  "displayName": "Jakarta Faces Tools",
+  "description": "Advanced Jakarta Faces (JSF) tools: deep nested Java EL resolution, custom composite component intelligence, real-time diagnostics, and hover documentation. GitHub: https://github.com/Moataz-Aldawood/jakarta-faces-tools",
+  "version": "1.5.1",
   "icon": "logo.jpg",
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Moataz-Aldawood/jakarta-face-tools"
+    "url": "https://github.com/Moataz-Aldawood/jakarta-faces-tools"
   },
   "engines": {
     "vscode": "^1.80.0"
