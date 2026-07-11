@@ -34,6 +34,11 @@ class JsfHoverProvider {
                 library = 'OmniFaces Tag Library';
                 markdown.appendMarkdown(`[View Showcase Demo](${showcaseUrl}) | [Read VDL Documentation](${vdlUrl})\n\n`);
             }
+            else if (prefix === 'b') {
+                const docUrl = `https://showcase.bootsfaces.net/`;
+                library = 'BootsFaces Tag Library';
+                markdown.appendMarkdown(`[Read full documentation](${docUrl})\n\n`);
+            }
             else {
                 const docUrl = `https://jakarta.ee/specifications/faces/4.1/vdldoc/${prefix}/${tagName}.html`;
                 markdown.appendMarkdown(`[Read full documentation](${docUrl})\n\n`);
