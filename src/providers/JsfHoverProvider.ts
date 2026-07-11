@@ -76,9 +76,6 @@ export class JsfHoverProvider implements vscode.HoverProvider {
                             if (attr.type) {
                                 markdown.appendMarkdown(`*Type:* \`${attr.type}\`\n\n`);
                             }
-                            if (attr.required) {
-                                markdown.appendMarkdown(`*Required:* \`${attr.required}\`\n\n`);
-                            }
                             markdown.appendMarkdown(`\n\n---\n*⚡ Jakarta Faces Tools*`);
                             return new vscode.Hover(markdown, wordRange);
                         }
