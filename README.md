@@ -6,7 +6,7 @@ Advanced VS Code extension for Jakarta Faces (JSF) development, featuring intell
 
 **GitHub Repository:** [https://github.com/Moataz-Aldawood/jakarta-faces-tools](https://github.com/Moataz-Aldawood/jakarta-faces-tools)
 
-A powerful Visual Studio Code extension designed to supercharge your Jakarta EE (JSF) development experience. This extension provides deep language features for JSF `.xhtml` and `.jsf` files, bringing IDE-level intelligence to VS Code.
+A powerful Visual Studio Code extension designed to supercharge your Jakarta Faces (JSF) development experience. This extension provides deep language features for JSF `.xhtml` and `.jsf` files, bringing IDE-level intelligence to VS Code.
 
 ## Features
 
@@ -38,7 +38,7 @@ Catch JSF mistakes before you ever run the application.
 ### 5. Configurable EL Highlighting
 Make your code pop and significantly improve readability with native syntax highlighting.
 - **EL Block Highlighting**: All EL expressions (`#{...}`) are automatically highlighted to distinguish them from standard HTML/XML.
-- **Highly Customizable**: Head to your VS Code Settings (`Jakarta Faces > El Highlight`) to completely customize the background color, text color, borders, and border-radius of your EL expressions.
+- **Highly Customizable**: Head to your VS Code Settings (`Jakarta Faces Tools > El Highlight`) to completely customize the background color, text color, borders, and border-radius of your EL expressions.
 
 ## Supported Versions
 The extension currently provides intelligence and documentation derived from the following specification versions:
