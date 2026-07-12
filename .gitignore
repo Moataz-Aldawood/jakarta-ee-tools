@@ -1,4 +1,4 @@
-
 *.vsix
 *.jar
 *.taglib.xml
+.agents/
