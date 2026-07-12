@@ -4,7 +4,7 @@
   "publisher": "moataz-aldawood",
   "displayName": "Jakarta Faces Tools",
   "description": "Advanced Jakarta Faces (JSF) tools: deep nested Java EL resolution, custom composite component intelligence, real-time diagnostics, and hover documentation. GitHub: https://github.com/Moataz-Aldawood/jakarta-faces-tools",
-  "version": "1.6.2",
+  "version": "1.7.0",
   "icon": "logo.png",
   "license": "GPL-3.0",
   "repository": {
@@ -23,7 +23,12 @@
     "JSF",
     "Java",
     "Java EE",
-    "Coding Utilities"
+    "Coding Utilities",
+    "PrimeFaces",
+    "OmniFaces",
+    "BootsFaces",
+    "Unknown Tag Detection",
+    "Unknown Attribute Detection"
   ],
   "activationEvents": [
     "onLanguage:jsf",
