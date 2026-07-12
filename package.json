@@ -42,26 +42,31 @@
         "jakartaFaces.elHighlight.enable": {
           "type": "boolean",
           "default": true,
+          "order": 1,
           "description": "Enable highlighting for EL Expressions (#{...})."
         },
         "jakartaFaces.elHighlight.backgroundColor": {
           "type": "string",
           "default": "rgba(100, 150, 255, 0.15)",
+          "order": 2,
           "description": "Background color for EL Expressions. Supports CSS colors (e.g. rgba, hex)."
         },
         "jakartaFaces.elHighlight.color": {
           "type": "string",
           "default": "",
+          "order": 3,
           "description": "Text color for EL Expressions (leave empty to use theme default)."
         },
         "jakartaFaces.elHighlight.border": {
           "type": "string",
           "default": "1px solid rgba(100, 150, 255, 0.3)",
+          "order": 4,
           "description": "Border for EL Expressions."
         },
         "jakartaFaces.elHighlight.borderRadius": {
           "type": "string",
           "default": "3px",
+          "order": 5,
           "description": "Border radius for EL Expressions."
         }
       }
