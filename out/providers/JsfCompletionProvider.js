@@ -61,7 +61,9 @@ class JsfCompletionProvider {
                             item.range = new vscode.Range(position.with(undefined, position.character - typedPrefix.length), position);
                         }
                         item.detail = `Custom Composite Component (${folder})`;
-                        item.documentation = new vscode.MarkdownString(`Custom JSF component loaded from resources/${folder}/${baseName}.xhtml`);
+                        const md = new vscode.MarkdownString(`Custom JSF component loaded from resources/${folder}/${baseName}.xhtml\n\n`);
+                        md.appendMarkdown(`---\n*⚡ Jakarta Faces Tools*`);
+                        item.documentation = md;
                         items.push(item);
                     }
                 }
