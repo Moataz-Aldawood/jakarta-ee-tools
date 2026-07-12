@@ -7,7 +7,6 @@ const JsfDefinitionProvider_1 = require("./providers/JsfDefinitionProvider");
 const JsfCompletionProvider_1 = require("./providers/JsfCompletionProvider");
 const JsfHoverProvider_1 = require("./providers/JsfHoverProvider");
 const JsfDiagnostics_1 = require("./providers/JsfDiagnostics");
-const JsfDocumentLinkProvider_1 = require("./providers/JsfDocumentLinkProvider");
 function activate(context) {
     console.log('Congratulations, your extension "jakarta-ee-tools" is now active!');
     const jsfDefinitionProvider = new JsfDefinitionProvider_1.JsfDefinitionProvider();
@@ -16,8 +15,7 @@ function activate(context) {
     const documentSelector = [
         { language: 'jsf' }, { language: 'html' }, { language: 'xml' }
     ];
-    const jsfDocumentLinkProvider = new JsfDocumentLinkProvider_1.JsfDocumentLinkProvider();
-    context.subscriptions.push(vscode.languages.registerDefinitionProvider(documentSelector, jsfDefinitionProvider), vscode.languages.registerCompletionItemProvider(documentSelector, jsfCompletionProvider, '<', ' ', ':'), vscode.languages.registerHoverProvider(documentSelector, jsfHoverProvider), vscode.languages.registerDocumentLinkProvider(documentSelector, jsfDocumentLinkProvider));
+    context.subscriptions.push(vscode.languages.registerDefinitionProvider(documentSelector, jsfDefinitionProvider), vscode.languages.registerCompletionItemProvider(documentSelector, jsfCompletionProvider, '<', ' ', ':'), vscode.languages.registerHoverProvider(documentSelector, jsfHoverProvider));
     const jsfDiagnostics = vscode.languages.createDiagnosticCollection('jsf');
     context.subscriptions.push(jsfDiagnostics);
     (0, JsfDiagnostics_1.subscribeToDocumentChanges)(context, jsfDiagnostics);

@@ -3,6 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.JsfDefinitionProvider = void 0;
 const vscode = require("vscode");
 const namespaceParser_1 = require("./namespaceParser");
+const jsfCatalog_1 = require("./jsfCatalog");
+const ThirdPartyCatalogs_1 = require("./ThirdPartyCatalogs");
 class JsfDefinitionProvider {
     async provideDefinition(document, position, token) {
         const lineText = document.lineAt(position.line).text;
@@ -30,9 +32,11 @@ class JsfDefinitionProvider {
                 return this.findResourceFile(resourcePath, range);
             }
         }
-        // Phase 5: Custom Composite Components
+        // Phase 5: Custom Composite Components and Standard Tags
         const docText = document.getText();
         const namespaces = (0, namespaceParser_1.getCompositeNamespaces)(docText);
+        const activeCatalogs = { ...jsfCatalog_1.JSF_CATALOG, ...(0, ThirdPartyCatalogs_1.getActiveThirdPartyCatalogs)(docText) };
+        const enableWebLinks = vscode.workspace.getConfiguration('jakartaFaces').get('enableWebLinks', true);
         // Find if we are inside a tag
         const tagRegex = /<([a-zA-Z0-9_-]+):([a-zA-Z0-9_-]+)\s*([^>]*)>/g;
         let tagMatch;
@@ -78,6 +82,48 @@ class JsfDefinitionProvider {
                                             targetRange: loc.range
                                         }];
                                 }
+                            }
+                        }
+                    }
+                }
+                // Standard and 3rd-party tags logic (if setting is enabled)
+                if (enableWebLinks) {
+                    const fullTagName = `${prefix}:${componentName}`;
+                    if (activeCatalogs[fullTagName]) {
+                        const nameStart = tagStart + 1; // skip <
+                        const nameEnd = nameStart + prefix.length + 1 + componentName.length;
+                        let docUrl = '';
+                        if (prefix === 'p') {
+                            docUrl = `https://primefaces.github.io/primefaces/15_0_0/#/components/${componentName.toLowerCase()}`;
+                        }
+                        else if (prefix === 'o') {
+                            docUrl = `https://omnifaces.org/docs/vdldoc/5.3/o/${componentName}.html`;
+                        }
+                        else if (prefix === 'b') {
+                            docUrl = `https://showcase.bootsfaces.net/`;
+                        }
+                        else {
+                            docUrl = `https://jakarta.ee/specifications/faces/4.1/vdldoc/${prefix}/${componentName}.html`;
+                        }
+                        // Check if clicking on the tag name itself
+                        if (position.character >= nameStart && position.character <= nameEnd) {
+                            vscode.env.openExternal(vscode.Uri.parse(docUrl));
+                            // Hack: Return current location to prevent VS Code falling back to HTML DefinitionProvider (CSS files)
+                            return [new vscode.Location(document.uri, position)];
+                        }
+                        // Check if clicking on an attribute inside this tag
+                        const attrRegex = /([a-zA-Z0-9_-]+)\s*=/g;
+                        const attrsText = tagMatch[3];
+                        const attrsStartOffset = tagStart + tagMatch[0].length - 1 - attrsText.length;
+                        let attrMatch;
+                        while ((attrMatch = attrRegex.exec(attrsText)) !== null) {
+                            const attrName = attrMatch[1];
+                            const attrStart = attrsStartOffset + attrMatch.index;
+                            const attrEnd = attrStart + attrName.length;
+                            if (position.character >= attrStart && position.character <= attrEnd) {
+                                vscode.env.openExternal(vscode.Uri.parse(docUrl + "#" + attrName));
+                                // Hack: Return current location
+                                return [new vscode.Location(document.uri, position)];
                             }
                         }
                     }
