@@ -15,7 +15,7 @@ export class JsfELHighlighter {
             this.decorationType.dispose();
         }
 
-        const config = vscode.workspace.getConfiguration('jakartaFaces.elHighlight');
+        const config = vscode.workspace.getConfiguration('jakartaFacesTools.elHighlight');
         const enable = config.get<boolean>('enable', true);
 
         if (!enable) {
@@ -56,10 +56,10 @@ export class JsfELHighlighter {
 
         // Handle configuration changes
         this.subscriptions.push(vscode.workspace.onDidChangeConfiguration(event => {
-            if (event.affectsConfiguration('jakartaFaces.elHighlight')) {
+            if (event.affectsConfiguration('jakartaFacesTools.elHighlight')) {
                 this.updateDecorationType();
                 // Clear decorations from active editor if disabled
-                if (!vscode.workspace.getConfiguration('jakartaFaces.elHighlight').get<boolean>('enable', true)) {
+                if (!vscode.workspace.getConfiguration('jakartaFacesTools.elHighlight').get<boolean>('enable', true)) {
                     if (vscode.window.activeTextEditor && this.decorationType) {
                         vscode.window.activeTextEditor.setDecorations(this.decorationType, []);
                     }
