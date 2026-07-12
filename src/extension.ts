@@ -3,6 +3,7 @@ import { JsfDefinitionProvider } from './providers/JsfDefinitionProvider';
 import { JsfCompletionProvider } from './providers/JsfCompletionProvider';
 import { JsfHoverProvider } from './providers/JsfHoverProvider';
 import { subscribeToDocumentChanges } from './providers/JsfDiagnostics';
+import { JsfELHighlighter } from './providers/JsfELHighlighter';
 
 export function activate(context: vscode.ExtensionContext) {
     console.log('Congratulations, your extension "jakarta-ee-tools" is now active!');
@@ -10,6 +11,7 @@ export function activate(context: vscode.ExtensionContext) {
     const jsfDefinitionProvider = new JsfDefinitionProvider();
     const jsfCompletionProvider = new JsfCompletionProvider();
     const jsfHoverProvider = new JsfHoverProvider();
+    const elHighlighter = new JsfELHighlighter();
     
     const documentSelector: vscode.DocumentSelector = [
         { language: 'jsf' }, { language: 'html' }, { language: 'xml' }
@@ -18,7 +20,8 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(
         vscode.languages.registerDefinitionProvider(documentSelector, jsfDefinitionProvider),
         vscode.languages.registerCompletionItemProvider(documentSelector, jsfCompletionProvider, '<', ' ', ':'),
-        vscode.languages.registerHoverProvider(documentSelector, jsfHoverProvider)
+        vscode.languages.registerHoverProvider(documentSelector, jsfHoverProvider),
+        elHighlighter
     );
 
     const jsfDiagnostics = vscode.languages.createDiagnosticCollection('jsf');

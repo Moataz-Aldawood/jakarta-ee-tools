@@ -35,6 +35,38 @@
     "onLanguage:html",
     "onLanguage:xml"
   ],
+  "contributes": {
+    "configuration": {
+      "title": "Jakarta Faces Tools",
+      "properties": {
+        "jakartaFaces.elHighlight.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable highlighting for EL Expressions (#{...})."
+        },
+        "jakartaFaces.elHighlight.backgroundColor": {
+          "type": "string",
+          "default": "rgba(100, 150, 255, 0.15)",
+          "description": "Background color for EL Expressions. Supports CSS colors (e.g. rgba, hex)."
+        },
+        "jakartaFaces.elHighlight.color": {
+          "type": "string",
+          "default": "",
+          "description": "Text color for EL Expressions (leave empty to use theme default)."
+        },
+        "jakartaFaces.elHighlight.border": {
+          "type": "string",
+          "default": "1px solid rgba(100, 150, 255, 0.3)",
+          "description": "Border for EL Expressions."
+        },
+        "jakartaFaces.elHighlight.borderRadius": {
+          "type": "string",
+          "default": "3px",
+          "description": "Border radius for EL Expressions."
+        }
+      }
+    }
+  },
   "main": "./out/extension.js",
   "scripts": {
     "vscode:prepublish": "npm run compile",
