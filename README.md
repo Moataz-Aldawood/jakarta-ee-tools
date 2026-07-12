@@ -35,6 +35,11 @@ Catch JSF mistakes before you ever run the application.
 - **EL Syntax Checking**: The extension runs in the background and will flag unmatched Expression Language brackets (e.g. `#{myBean` missing the closing `}`) with a red error squiggly.
 - **Unknown Tag and Attribute Detection**: Mistyped standard or 3rd-party tags (e.g., `<h:outpottText>`) as well as unrecognized attributes will be flagged with a yellow warning squiggly.
 
+### 5. Configurable EL Highlighting
+Make your code pop and significantly improve readability with native syntax highlighting.
+- **EL Block Highlighting**: All EL expressions (`#{...}`) are automatically highlighted to distinguish them from standard HTML/XML.
+- **Highly Customizable**: Head to your VS Code Settings (`Jakarta Faces > El Highlight`) to completely customize the background color, text color, borders, and border-radius of your EL expressions.
+
 ## Supported Versions
 The extension currently provides intelligence and documentation derived from the following specification versions:
 - **Jakarta Faces (JSF)**: 4.1
