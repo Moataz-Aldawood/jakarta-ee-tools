@@ -16,10 +16,11 @@ Navigate seamlessly through your JSF project structure and Java backend with sta
 - **Template Navigation**: `Ctrl+Click` on `template="/WEB-INF/templates/master.xhtml"` to open the template file.
 - **Resource Navigation**: `Ctrl+Click` on `#{resource['css/styles.css']}` to instantly open the corresponding static resource from your `src/main/webapp/resources` folder.
 
-### 2. Standard JSF 4.1 Tag Intelligence
-Enjoy first-class support for standard JSF 4.1 tags (`<h:`, `<f:`, `<ui:`).
-- **Auto-Complete**: Start typing a tag or hit `Ctrl+Space` inside a tag to get auto-complete suggestions for both standard JSF tags and all their available attributes.
-- **Rich Hover Documentation**: Hover over any standard JSF tag to see a concise description of what the component does, along with a direct link to the official Jakarta EE 4.1 Specification documentation.
+### 2. Standard and 3rd-Party Tag Intelligence
+Enjoy first-class support for standard JSF 4.1 tags (`<h:`, `<f:`, `<ui:`) as well as major 3rd-party libraries including **PrimeFaces**, **OmniFaces**, and **BootsFaces**.
+- **Auto-Complete**: Start typing a tag or hit `Ctrl+Space` inside a tag to get auto-complete suggestions for both standard/3rd-party JSF tags and all their available attributes.
+- **Rich Tag Documentation Hover**: Hover over any standard or supported 3rd-party JSF tag to see a concise description of what the component does, along with a direct link to the official documentation.
+- **Attribute Hover Documentation**: Hover over any standard or 3rd-party JSF attribute (e.g. `value`, `rendered`) to see a rich markdown popup containing the attribute's description and type!
 
 ### 3. Custom Composite Components Support
 Built-in intelligence for your workspace's custom JSF Composite Components without any manual configuration!
@@ -32,22 +33,21 @@ Built-in intelligence for your workspace's custom JSF Composite Components witho
 ### 4. Real-time Syntax Error Diagnostics
 Catch JSF mistakes before you ever run the application.
 - **EL Syntax Checking**: The extension runs in the background and will flag unmatched Expression Language brackets (e.g. `#{myBean` missing the closing `}`) with a red error squiggly.
-- **Unknown Tag Detection**: Mistyped standard tags (e.g., `<h:outpottText>`) will be flagged with a yellow warning squiggly, letting you know it isn't a recognized JSF tag.
+- **Unknown Tag and Attribute Detection**: Mistyped standard or 3rd-party tags (e.g., `<h:outpottText>`) as well as unrecognized attributes will be flagged with a yellow warning squiggly.
+
+## Supported Versions
+The extension currently provides intelligence and documentation derived from the following specification versions:
+- **Jakarta Faces (JSF)**: 4.1
+- **PrimeFaces**: 15.0.0
+- **OmniFaces**: 5.3.4
+- **BootsFaces**: 2.0.1
 
 ## Requirements
 - Works best in standard Maven-structured projects with `src/main/webapp/resources` folders, but is flexible enough to adapt to other directory structures.
 - Does not require a Java Language Server to be running, but synergizes excellently with standard Java extensions.
 
-## Future Enhancements
-- **Component File Caching**: Instant jump-to-definition and extreme performance optimizations for huge enterprise workspaces via Java file caching.
-- **EL Auto-Complete (IntelliSense)**: Deep auto-complete for Java Managed Beans, properties, and methods when typing inside `#{...}` blocks.
-- **EL Semantic Validation**: Real-time diagnostics for mistyped Java beans and properties within EL expressions (e.g., flagging `#{userLoggin.user}`).
-- **3rd-Party Tag library support**: Rich integration for libraries like PrimeFaces.
-- **EL Expression Highlighting**: Add syntax highlighting specific to JSF Expression Language `#{...}` blocks.
-- **Expanded Hover Documentation**: Show full documentation in the hover popup rather than just the concise summary.
-- **Attribute Hover Documentation**: Show rich hover documentation popups for specific JSF standard tag attributes.
-- **Component Linking**: Colorize `for="..."` attribute values and link them directly to the corresponding `id="..."` values.
-- **`ui:repeat` iteration variable support**: Deep resolution testing and support for iteration variables like `#{item.name}` inside data tables and repeats.
+## Feedback & Contributions
+We would love to hear from you! If you have any feedback, want to request new features, or need to report an issue, please feel free to open an issue on our [GitHub Repository](https://github.com/Moataz-Aldawood/jakarta-faces-tools). Your contributions and suggestions are highly appreciated!
 
 ## License
 This project is licensed under the GPL-3.0 License.
