@@ -4,6 +4,7 @@ exports.JsfHoverProvider = void 0;
 const vscode = require("vscode");
 const jsfCatalog_1 = require("./jsfCatalog");
 const ThirdPartyCatalogs_1 = require("./ThirdPartyCatalogs");
+const tagParser_1 = require("./tagParser");
 class JsfHoverProvider {
     provideHover(document, position, token) {
         const wordRange = document.getWordRangeAtPosition(position, /[a-zA-Z0-9_:-]+/);
@@ -48,51 +49,41 @@ class JsfHoverProvider {
             return new vscode.Hover(markdown, wordRange);
         }
         // Check if the hovered word is a JSF tag attribute
-        // Parse backwards to find the nearest enclosing tag
-        const textBeforePosition = document.getText(new vscode.Range(new vscode.Position(0, 0), position));
-        const lastOpenBracketIdx = textBeforePosition.lastIndexOf('<');
-        if (lastOpenBracketIdx !== -1) {
-            const lastCloseBracketIdx = textBeforePosition.lastIndexOf('>');
-            if (lastOpenBracketIdx > lastCloseBracketIdx) {
-                // We are inside a tag
-                const tagText = textBeforePosition.substring(lastOpenBracketIdx);
-                const match = tagText.match(/<([a-zA-Z0-9_:-]+)/);
-                if (match) {
-                    const tagName = match[1];
-                    const tagDef = activeCatalogs[tagName];
-                    if (tagDef && tagDef.attributes) {
-                        const attr = tagDef.attributes.find(a => a.name === word);
-                        if (attr) {
-                            const markdown = new vscode.MarkdownString();
-                            markdown.appendMarkdown(`**${tagName}** \`@${attr.name}\`\n\n`);
-                            markdown.appendMarkdown(`${attr.description || 'No description available.'}\n\n`);
-                            if (attr.type) {
-                                markdown.appendMarkdown(`*Type:* \`${attr.type}\`\n\n`);
-                            }
-                            const parts = tagName.split(':');
-                            const prefix = parts.length > 1 ? parts[0] : '';
-                            const componentName = parts.length > 1 ? parts[1] : tagName;
-                            let docUrl = '';
-                            if (prefix === 'p') {
-                                docUrl = `https://primefaces.github.io/primefaces/15_0_0/#/components/${componentName.toLowerCase()}`;
-                            }
-                            else if (prefix === 'o') {
-                                const vdlUrl = `https://omnifaces.org/docs/vdldoc/5.3/o/${componentName}.html`;
-                                docUrl = vdlUrl; // OmniFaces uses VDL URL for attributes too
-                            }
-                            else if (prefix === 'b') {
-                                docUrl = `https://showcase.bootsfaces.net/`;
-                            }
-                            else {
-                                docUrl = `https://jakarta.ee/specifications/faces/4.1/vdldoc/${prefix}/${componentName}.html`;
-                            }
-                            // Primefaces doesn't support anchors for attributes on their new page, but standard JSF/Omnifaces do.
-                            // We will just point to the page, and if the anchor exists the browser will scroll to it.
-                            markdown.appendMarkdown(`[🌐 Read full documentation online](${docUrl}#${attr.name})\n\n`);
-                            markdown.appendMarkdown(`\n\n---\n*⚡ Jakarta Faces Tools*`);
-                            return new vscode.Hover(markdown, wordRange);
-                        }
+        const tagInfo = (0, tagParser_1.getEnclosingTag)(document, position);
+        if (tagInfo) {
+            const tagName = tagInfo.tagName;
+            const tagDef = activeCatalogs[tagName];
+            if (tagDef && tagDef.attributes) {
+                const attr = tagDef.attributes.find(a => a.name === word);
+                if (attr) {
+                    const markdown = new vscode.MarkdownString();
+                    markdown.appendMarkdown(`**${tagName}** \`@${attr.name}\`\n\n`);
+                    markdown.appendMarkdown(`${attr.description || 'No description available.'}\n\n`);
+                    if (attr.type) {
+                        markdown.appendMarkdown(`*Type:* \`${attr.type}\`\n\n`);
                     }
+                    const parts = tagName.split(':');
+                    const prefix = parts.length > 1 ? parts[0] : '';
+                    const componentName = parts.length > 1 ? parts[1] : tagName;
+                    let docUrl = '';
+                    if (prefix === 'p') {
+                        docUrl = `https://primefaces.github.io/primefaces/15_0_0/#/components/${componentName.toLowerCase()}`;
+                    }
+                    else if (prefix === 'o') {
+                        const vdlUrl = `https://omnifaces.org/docs/vdldoc/5.3/o/${componentName}.html`;
+                        docUrl = vdlUrl; // OmniFaces uses VDL URL for attributes too
+                    }
+                    else if (prefix === 'b') {
+                        docUrl = `https://showcase.bootsfaces.net/`;
+                    }
+                    else {
+                        docUrl = `https://jakarta.ee/specifications/faces/4.1/vdldoc/${prefix}/${componentName}.html`;
+                    }
+                    // Primefaces doesn't support anchors for attributes on their new page, but standard JSF/Omnifaces do.
+                    // We will just point to the page, and if the anchor exists the browser will scroll to it.
+                    markdown.appendMarkdown(`[🌐 Read full documentation online](${docUrl}#${attr.name})\n\n`);
+                    markdown.appendMarkdown(`\n\n---\n*⚡ Jakarta Faces Tools*`);
+                    return new vscode.Hover(markdown, wordRange);
                 }
             }
         }

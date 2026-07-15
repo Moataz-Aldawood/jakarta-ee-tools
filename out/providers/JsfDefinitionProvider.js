@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.JsfDefinitionProvider = void 0;
 const vscode = require("vscode");
 const namespaceParser_1 = require("./namespaceParser");
+const tagParser_1 = require("./tagParser");
 class JsfDefinitionProvider {
     async provideDefinition(document, position, token) {
         const lineText = document.lineAt(position.line).text;
@@ -33,47 +34,41 @@ class JsfDefinitionProvider {
         // Phase 5: Custom Composite Components
         const docText = document.getText();
         const namespaces = (0, namespaceParser_1.getCompositeNamespaces)(docText);
-        // Find if we are inside a tag
-        const tagRegex = /<([a-zA-Z0-9_-]+):([a-zA-Z0-9_-]+)\s*([^>]*)>/g;
-        let tagMatch;
-        while ((tagMatch = tagRegex.exec(lineText)) !== null) {
-            const prefix = tagMatch[1];
-            const componentName = tagMatch[2];
-            const tagStart = tagMatch.index;
-            const tagEnd = tagMatch.index + tagMatch[0].length;
-            if (position.character >= tagStart && position.character <= tagEnd) {
-                // Check if it's a Custom Composite Component
-                const folder = namespaces[prefix];
-                if (folder) {
-                    const componentUri = await (0, namespaceParser_1.resolveCompositeComponent)(folder, componentName);
-                    if (componentUri) {
-                        // Check if clicking on the tag name itself
-                        const nameStart = tagStart + 1; // skip <
-                        const nameEnd = nameStart + prefix.length + 1 + componentName.length; // prefix:componentName
-                        if (position.character >= nameStart && position.character <= nameEnd) {
-                            return [{
-                                    originSelectionRange: new vscode.Range(position.line, nameStart, position.line, nameEnd),
-                                    targetUri: componentUri,
-                                    targetRange: new vscode.Range(0, 0, 0, 0)
-                                }];
-                        }
-                        // Check if clicking on an attribute inside this tag
+        const tagInfo = (0, tagParser_1.getEnclosingTag)(document, position);
+        if (tagInfo) {
+            const { tagName, prefix, componentName, attributes, attributesOffset, tagStartOffset, tagEndOffset } = tagInfo;
+            // Check if it's a Custom Composite Component
+            const folder = namespaces[prefix];
+            if (folder) {
+                const componentUri = await (0, namespaceParser_1.resolveCompositeComponent)(folder, componentName);
+                if (componentUri) {
+                    // Check if clicking on the tag name itself
+                    const nameStart = tagStartOffset + 1; // skip <
+                    const nameEnd = nameStart + prefix.length + 1 + componentName.length; // prefix:componentName
+                    const clickOffset = document.offsetAt(position);
+                    if (clickOffset >= nameStart && clickOffset <= nameEnd) {
+                        return [{
+                                originSelectionRange: new vscode.Range(document.positionAt(nameStart), document.positionAt(nameEnd)),
+                                targetUri: componentUri,
+                                targetRange: new vscode.Range(0, 0, 0, 0)
+                            }];
+                    }
+                    // Check if clicking on an attribute inside this tag
+                    if (attributesOffset !== -1) {
                         const attrRegex = /([a-zA-Z0-9_-]+)\s*=/g;
-                        const attrsText = tagMatch[3];
-                        const attrsStartOffset = tagStart + tagMatch[0].length - 1 - attrsText.length;
                         let attrMatch;
-                        while ((attrMatch = attrRegex.exec(attrsText)) !== null) {
+                        while ((attrMatch = attrRegex.exec(attributes)) !== null) {
                             const attrName = attrMatch[1];
-                            const attrStart = attrsStartOffset + attrMatch.index;
+                            const attrStart = attributesOffset + attrMatch.index;
                             const attrEnd = attrStart + attrName.length;
-                            if (position.character >= attrStart && position.character <= attrEnd) {
+                            if (clickOffset >= attrStart && clickOffset <= attrEnd) {
                                 // Find <cc:attribute name="attrName"> inside the component file
                                 const compContent = await this.readFile(componentUri);
                                 const ccAttrRegex = new RegExp(`<[a-zA-Z0-9_-]+:attribute\\s+[^>]*name=["']${attrName}["']`);
                                 const loc = this.createLocation(componentUri, compContent, ccAttrRegex);
                                 if (loc) {
                                     return [{
-                                            originSelectionRange: new vscode.Range(position.line, attrStart, position.line, attrEnd),
+                                            originSelectionRange: new vscode.Range(document.positionAt(attrStart), document.positionAt(attrEnd)),
                                             targetUri: loc.uri,
                                             targetRange: loc.range
                                         }];

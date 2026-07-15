@@ -4,6 +4,7 @@ exports.JsfCompletionProvider = void 0;
 const vscode = require("vscode");
 const jsfCatalog_1 = require("./jsfCatalog");
 const namespaceParser_1 = require("./namespaceParser");
+const tagParser_1 = require("./tagParser");
 const ThirdPartyCatalogs_1 = require("./ThirdPartyCatalogs");
 class JsfCompletionProvider {
     async provideCompletionItems(document, position, token, context) {
@@ -71,10 +72,9 @@ class JsfCompletionProvider {
             return items;
         }
         // Check if we are inside an existing tag to suggest attributes
-        // e.g., <h:outputText | or <tc:labeledInput |
-        const insideTagMatch = /<([a-zA-Z0-9_:-]+)\s+[^>]*$/.exec(linePrefix);
-        if (insideTagMatch) {
-            const tagName = insideTagMatch[1];
+        const tagInfo = (0, tagParser_1.getEnclosingTag)(document, position);
+        if (tagInfo) {
+            const tagName = tagInfo.tagName;
             // 1. Standard Tag Attributes
             const activeCatalogs = { ...jsfCatalog_1.JSF_CATALOG, ...(0, ThirdPartyCatalogs_1.getActiveThirdPartyCatalogs)(docText) };
             const tag = activeCatalogs[tagName];
@@ -93,13 +93,10 @@ class JsfCompletionProvider {
                 return items;
             }
             // 2. Custom Component Attributes
-            const parts = tagName.split(':');
-            if (parts.length === 2) {
-                const prefix = parts[0];
-                const componentName = parts[1];
-                const folder = namespaces[prefix];
+            if (tagInfo.prefix && tagInfo.componentName) {
+                const folder = namespaces[tagInfo.prefix];
                 if (folder) {
-                    const componentUri = await (0, namespaceParser_1.resolveCompositeComponent)(folder, componentName);
+                    const componentUri = await (0, namespaceParser_1.resolveCompositeComponent)(folder, tagInfo.componentName);
                     if (componentUri) {
                         const items = [];
                         const customAttrs = await (0, namespaceParser_1.getCompositeAttributes)(componentUri);

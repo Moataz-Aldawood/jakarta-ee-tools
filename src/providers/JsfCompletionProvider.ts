@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import { JSF_CATALOG } from './jsfCatalog';
 import { getCompositeNamespaces, resolveCompositeComponent, getCompositeAttributes } from './namespaceParser';
+import { getEnclosingTag } from './tagParser';
 import { getActiveThirdPartyCatalogs } from './ThirdPartyCatalogs';
 
 export class JsfCompletionProvider implements vscode.CompletionItemProvider {
@@ -93,10 +94,9 @@ export class JsfCompletionProvider implements vscode.CompletionItemProvider {
         }
 
         // Check if we are inside an existing tag to suggest attributes
-        // e.g., <h:outputText | or <tc:labeledInput |
-        const insideTagMatch = /<([a-zA-Z0-9_:-]+)\s+[^>]*$/.exec(linePrefix);
-        if (insideTagMatch) {
-            const tagName = insideTagMatch[1];
+        const tagInfo = getEnclosingTag(document, position);
+        if (tagInfo) {
+            const tagName = tagInfo.tagName;
             
             // 1. Standard Tag Attributes
             const activeCatalogs = { ...JSF_CATALOG, ...getActiveThirdPartyCatalogs(docText) };
@@ -117,14 +117,11 @@ export class JsfCompletionProvider implements vscode.CompletionItemProvider {
             }
             
             // 2. Custom Component Attributes
-            const parts = tagName.split(':');
-            if (parts.length === 2) {
-                const prefix = parts[0];
-                const componentName = parts[1];
-                const folder = namespaces[prefix];
+            if (tagInfo.prefix && tagInfo.componentName) {
+                const folder = namespaces[tagInfo.prefix];
                 
                 if (folder) {
-                    const componentUri = await resolveCompositeComponent(folder, componentName);
+                    const componentUri = await resolveCompositeComponent(folder, tagInfo.componentName);
                     if (componentUri) {
                         const items: vscode.CompletionItem[] = [];
                         const customAttrs = await getCompositeAttributes(componentUri);
